@@ -7,7 +7,7 @@
 
 body {
     background: #080808;
-    color: #fff;
+    color: azure;
 }
 
 #header {
@@ -45,7 +45,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: azure;
     font-size: 18px;
     position: relative;
 }
@@ -77,4 +77,77 @@ nav ul li a:hover::after {
 
 .header-text h1 span {
     color: #b35e19;
+}
+
+/*about section*/
+#about {
+    padding: 80 px 0;
+    color: #af7d7d
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: azure;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px 0;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #b35e19;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
 }

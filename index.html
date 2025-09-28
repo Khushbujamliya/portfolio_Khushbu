@@ -27,13 +27,60 @@
         </div>
     </div>
 </div>
-<div id = "about">
+</div id = "about">
     <div class="container">
         <div class="row">
-            <div class="about-col-1"></div>
-            <div class="about-col-2"></div>
+            <div class="about-col-1">
+                <img src="images/user.jpg"></div>
+            <div class="about-col-2"> <h1 class= "sub-title">About Me</h1>
+            <p>I’m an aspiring Full-Stack Web Developer with practical experience in Java, Spring Boot, React, and modern web technologies. I enjoy building scalable applications that balance functionality with seamless user experience. Passionate about continuous learning, I’m eager to take on challenging projects that help me grow while delivering real value.</p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')"> Skills</p>
+                <p class="tab-links"  onclick="opentab('experience')"> Experience</p>
+                <p class="tab-links"  onclick="opentab('education')"> Education</p>
+                <p></p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+            <ul>
+                <li><span>HTML, CSS, JavaScript</span></li>
+                <li>React.js, Bootstrap</li>
+                <li>Java, Spring Boot</li>
+                <li>MySQL, MongoDB</li>
+                <li>Git, GitHub</li>
+            </ul> 
+            </div>
+             <div class="tab-contents" id="experience">
+            <ul>
+                <li>2022-current</li>
+                <li>jsdflgh</li>
+                <li>J54546t</li>
+                
+            </ul> 
+            </div>
+             <div class="tab-contents" id="education">
+            <ul>
+                <li>college</li>
+                <li>college</li>
+                <li>college</li>
+                <li>college</li>
+            </ul> 
+            </div>
         </div>
-    </div>            
+<div>
 </div>
+<script>
+    function opentab(tabname){
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </body>
 </html>
