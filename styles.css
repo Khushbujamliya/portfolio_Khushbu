@@ -79,7 +79,7 @@ nav ul li a:hover::after {
     color: #b35e19;
 }
 
-/*about section*/
+/*-- ---------about Section-------- */
 #about {
     padding: 80 px 0;
     color: #af7d7d
@@ -150,4 +150,49 @@ nav ul li a:hover::after {
 
 .tab-contents.active-tab {
     display: block;
+}
+
+/* ---------Services Section-------- */
+#services {
+    padding: 30 px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    max-width: 1200px; /* optional: controls container width */
+    margin-left: auto;
+    margin-right: auto;
+}  
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right=: 3px solid #b35e19;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    color: azure;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: azure;
+}
+.services-list div a{
+    text-decoration: none;
+    color: azure;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background: #b35e19;
+    transform: translateY(-10px);
 }
