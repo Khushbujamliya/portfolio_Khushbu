@@ -14,13 +14,15 @@
     <div class="container">
         <nav>
             <img src="images/logo.jpg" class ="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>    
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>   
+            <i class="fa-solid fa-bars"  onclick="openmenu()"></i> 
         </nav>
         <div class="header-text">
             <p>Web Developer & Designer</p>
@@ -31,7 +33,7 @@
 
 
 <!-- ---------About Section-------- -->
-</div id = "about">
+<div id = "about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
@@ -174,11 +176,11 @@
             <a href="images/Khushbu_Jamliya_Resume.pdf" download class="btn btn2">Download CV<i class="fa-solid fa-regular fa-circle-down"></i></a>
         </div>
         <div class="contact-right">
-            <form action="">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Subject" required>
-                <textarea rows="6" placeholder="Message" required></textarea>
+            <form action="" name="submit-to-google-sheet" id="contact-form">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <input type="text" name="Subject" placeholder="Subject" required>
+                <textarea nzame="Message" rows="6" placeholder="Message" required></textarea>
                 <button type="submit" class="btn btn2">Send </button>
             </form>
         </div>
@@ -202,6 +204,26 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbzVCJ4bUwYIgdM02vbqUIr4tUK94FSvEv7NdtF6oa84M8WJvXJSsWAgfVYRtymGJO8AZg/exec>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 </body>
 </html>
